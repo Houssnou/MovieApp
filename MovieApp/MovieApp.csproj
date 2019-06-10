@@ -201,9 +201,34 @@
     <Compile Include="Migrations\201906100303336_ApplyingAnnotationsToCustomerName.Designer.cs">
       <DependentUpon>201906100303336_ApplyingAnnotationsToCustomerName.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201906100437334_ApplyingAnnotationsToMembershipTypes.cs" />
+    <Compile Include="Migrations\201906100437334_ApplyingAnnotationsToMembershipTypes.Designer.cs">
+      <DependentUpon>201906100437334_ApplyingAnnotationsToMembershipTypes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906100442047_SettingNameToMembershipTypes.cs" />
+    <Compile Include="Migrations\201906100442047_SettingNameToMembershipTypes.Designer.cs">
+      <DependentUpon>201906100442047_SettingNameToMembershipTypes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906100458477_AddingDateofBirthToCustomer.cs" />
+    <Compile Include="Migrations\201906100458477_AddingDateofBirthToCustomer.Designer.cs">
+      <DependentUpon>201906100458477_AddingDateofBirthToCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906100500331_AddingDateofBirthToCustomer1.cs" />
+    <Compile Include="Migrations\201906100500331_AddingDateofBirthToCustomer1.Designer.cs">
+      <DependentUpon>201906100500331_AddingDateofBirthToCustomer1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906100522263_AddingModelGenreAndLinkingMovieToGenre.cs" />
+    <Compile Include="Migrations\201906100522263_AddingModelGenreAndLinkingMovieToGenre.Designer.cs">
+      <DependentUpon>201906100522263_AddingModelGenreAndLinkingMovieToGenre.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906100525117_SeedingMoviesAndGenres.cs" />
+    <Compile Include="Migrations\201906100525117_SeedingMoviesAndGenres.Designer.cs">
+      <DependentUpon>201906100525117_SeedingMoviesAndGenres.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\Genre.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\MembershipType.cs" />
@@ -273,6 +298,7 @@
     <Content Include="Views\Movies\Index.cshtml" />
     <Content Include="Views\Movies\Random.cshtml" />
     <Content Include="Views\Customers\Details.cshtml" />
+    <Content Include="Views\Movies\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -305,6 +331,24 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201906100303336_ApplyingAnnotationsToCustomerName.resx">
       <DependentUpon>201906100303336_ApplyingAnnotationsToCustomerName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906100437334_ApplyingAnnotationsToMembershipTypes.resx">
+      <DependentUpon>201906100437334_ApplyingAnnotationsToMembershipTypes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906100442047_SettingNameToMembershipTypes.resx">
+      <DependentUpon>201906100442047_SettingNameToMembershipTypes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906100458477_AddingDateofBirthToCustomer.resx">
+      <DependentUpon>201906100458477_AddingDateofBirthToCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906100500331_AddingDateofBirthToCustomer1.resx">
+      <DependentUpon>201906100500331_AddingDateofBirthToCustomer1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906100522263_AddingModelGenreAndLinkingMovieToGenre.resx">
+      <DependentUpon>201906100522263_AddingModelGenreAndLinkingMovieToGenre.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906100525117_SeedingMoviesAndGenres.resx">
+      <DependentUpon>201906100525117_SeedingMoviesAndGenres.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -1,22 +1,33 @@
-﻿
+﻿@model IEnumerable<MovieApp.Models.Movie>
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Movies";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <h2>Movies</h2>
 <table class="table table-bordered table-hover">
     <thead>
-    <tr>
-        <th>Movie</th>
-    </tr>
+        <tr>
+            <th>Movie</th>
+            <th>Genre</th>
+            <th>Date Added</th>
+            <th>Release Date</th>
+            <th>Stock</th>
+
+        </tr>
     </thead>
     <tbody>
-    @foreach (var movie in Model)
-    {
-        <tr>
-            <td>@movie.Name</td>
-        </tr>
-    }
+        @foreach (var movie in Model)
+        {
+            <tr>
+                <td>@Html.ActionLink(movie.Name, "Details", "Movies", new {id = movie.Id}, null)</td>
+                <td>@movie.Genre.Name</td>
+                <td>@movie.DateAdded.ToShortDateString()</td>
+                <td>@movie.ReleaseDate.ToShortDateString()</td>
+                <td>@movie.NumberInStock</td>
+
+
+            </tr>
+        }
     </tbody>
 </table>
