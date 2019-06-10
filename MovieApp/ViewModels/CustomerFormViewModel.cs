@@ -11,5 +11,15 @@ namespace MovieApp.ViewModels
        // public List<MembershipType> MembershipTypes { get; set; }
         public IEnumerable<MembershipType> MembershipTypes { get; set; }
         public Customer Customer { get; set; }
+        public string Formtitle
+        {
+            get
+            {
+                if (Customer != null && Customer.Id != 0)
+                    return "Edit Customer Infos";
+
+                return "Adding a customer";
+            }
+        }
     }
 }
