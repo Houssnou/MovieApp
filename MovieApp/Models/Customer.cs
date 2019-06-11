@@ -12,6 +12,7 @@ namespace MovieApp.Models
         public string Name { get; set; }
 
         [Display(Name="Date of Birth")]
+        [Min18YearsIfAMember]
         public DateTime? Dob { get; set; }
 
         public bool IsSubscribedToNewsletter { get; set; }

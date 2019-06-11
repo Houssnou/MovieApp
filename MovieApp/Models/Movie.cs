@@ -26,6 +26,7 @@ namespace MovieApp.Models
 
         [Required]
         [Display(Name = "Number in stock")]
+        [Range(1,99)]
         public byte NumberInStock { get; set; }
 
     }
