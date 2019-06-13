@@ -22,5 +22,7 @@ namespace MovieApp.Dtos
 
         public byte MembershipTypeId { get; set; }
 
+        public MembershipTypeDto MembershipType { get; set; }
+
     }
 }
