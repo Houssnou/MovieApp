@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Http;
 using AutoMapper;
+using System.Data.Entity;
 using Microsoft.Ajax.Utilities;
 using MovieApp.Dtos;
 using MovieApp.Models;
@@ -22,7 +23,10 @@ namespace MovieApp.Controllers.Api
         [HttpGet]
         public IEnumerable<MovieDto> GetMovies()
         {
-            return _context.Movies.ToList().Select(Mapper.Map<Movie, MovieDto>);
+            return _context.Movies
+                .Include(m=>m.Genre)
+                .ToList()
+                .Select(Mapper.Map<Movie, MovieDto>);
         }
         //GET a movie by id
         [HttpGet]
