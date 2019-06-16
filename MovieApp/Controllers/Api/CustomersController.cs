@@ -21,17 +21,32 @@ namespace MovieApp.Controllers.Api
         }
 
         //GET /api/customers
-        public IHttpActionResult GetCustomers()
+        //public IHttpActionResult GetCustomers()
+        //{
+        //    var customerDtos= _context.Customers
+        //        .Include(c=>c.MembershipType)
+        //        .ToList()
+        //        .Select(Mapper.Map<Customer, CustomerDto>);
+
+        //    return Ok(customerDtos);
+        //}
+
+        //GET /api/customers/1
+
+        public IHttpActionResult GetCustomers(string query = null)
         {
-            var customerDtos= _context.Customers
-                .Include(c=>c.MembershipType)
+            var customersList = _context.Customers
+                .Include(c => c.MembershipType);
+
+            if (!String.IsNullOrWhiteSpace(query))
+                customersList = customersList.Where(c => c.Name.Contains(query));
+
+            var customerDtos = customersList
                 .ToList()
                 .Select(Mapper.Map<Customer, CustomerDto>);
 
             return Ok(customerDtos);
         }
-
-        //GET /api/customers/1
         public IHttpActionResult GetCustomer(int id)
         {
             var customer = _context.Customers.SingleOrDefault(c => c.Id == id);

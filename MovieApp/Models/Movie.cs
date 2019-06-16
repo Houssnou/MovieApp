@@ -29,5 +29,6 @@ namespace MovieApp.Models
         [Range(1,99)]
         public byte NumberInStock { get; set; }
 
+        public byte NumberAvailable { get; set; }
     }
 }

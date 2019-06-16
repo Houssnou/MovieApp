@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
+using System.Runtime.Caching;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.UI.WebControls;
 using MovieApp.Models;
 using MovieApp.ViewModels;
+using static MovieApp.Models.CacheData;
 
 namespace MovieApp.Controllers
 {
@@ -75,7 +77,15 @@ namespace MovieApp.Controllers
     
     public ViewResult Index()
     {
-       return View();
+        //adding data caching
+        if (MemoryCache.Default[CachedGenres] == null)
+        {
+            MemoryCache.Default[CacheData.CachedGenres] = _context.Genres.ToList();
+        }
+
+        var genres = MemoryCache.Default[CacheData.CachedGenres] as IEnumerable<Genre>;
+
+        return View();
     }
 
     public ActionResult Details(int id)

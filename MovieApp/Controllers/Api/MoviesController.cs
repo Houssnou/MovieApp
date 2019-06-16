@@ -11,7 +11,7 @@ using MovieApp.Models;
 
 namespace MovieApp.Controllers.Api
 {
-    public class MoviesController:ApiController
+    public class MoviesController : ApiController
     {
         private ApplicationDbContext _context;
 
@@ -21,10 +21,16 @@ namespace MovieApp.Controllers.Api
         }
         //GET all movies
         [HttpGet]
-        public IEnumerable<MovieDto> GetMovies()
+        public IEnumerable<MovieDto> GetMovies(string query = null)
         {
-            return _context.Movies
-                .Include(m=>m.Genre)
+            var moviesList = _context.Movies
+                .Include(m => m.Genre)
+                .Where(m => m.NumberAvailable > 0);
+
+            if (!String.IsNullOrWhiteSpace(query))
+                moviesList = moviesList.Where(m => m.Name.Contains(query));
+
+            return moviesList
                 .ToList()
                 .Select(Mapper.Map<Movie, MovieDto>);
         }
