@@ -54,14 +54,14 @@ namespace MovieApp
             //   consumerKey: "",
             //   consumerSecret: "");
 
-            //app.UseFacebookAuthentication(
-            //   appId: "",
-            //   appSecret: "");
+            app.UseFacebookAuthentication(
+              appId: "2432001846891946",
+              appSecret: "934a921bdbdcd7a4e8bc6133f4d46d45");
 
             //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
             //{
-            //    ClientId = "",
-            //    ClientSecret = ""
+            //    ClientId = "242788533429-71i89qclc9voar8d0hh5l80vnva4v1m6.apps.googleusercontent.com",
+            //    ClientSecret = "wY-xoLAkGdK73125owYNrisQ"
             //});
         }
     }
