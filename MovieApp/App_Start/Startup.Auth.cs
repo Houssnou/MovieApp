@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Configuration;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
@@ -55,13 +56,13 @@ namespace MovieApp
             //   consumerSecret: "");
 
             app.UseFacebookAuthentication(
-              appId: "2432001846891946",
-              appSecret: "934a921bdbdcd7a4e8bc6133f4d46d45");
+              appId:ConfigurationManager.AppSettings["FacebookAppId"],
+              appSecret: ConfigurationManager.AppSettings["FacebookAppSecret"]);
 
             //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
             //{
-            //    ClientId = "242788533429-71i89qclc9voar8d0hh5l80vnva4v1m6.apps.googleusercontent.com",
-            //    ClientSecret = "wY-xoLAkGdK73125owYNrisQ"
+            //    ClientId = ConfigurationManager.AppSettings["GoogleAppId"],
+            //    ClientSecret = ConfigurationManager.AppSettings["GoogleAppSecret"]
             //});
         }
     }
